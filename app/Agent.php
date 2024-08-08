@@ -14,7 +14,7 @@ class Agent extends Model
     public $timestamps = false;
 
     protected $attributes = [
-
+    'id',
     'conf' => null,
     'cluster' => 'default',
     'name' => null,
@@ -31,7 +31,7 @@ class Agent extends Model
 
     // none user updateable columns
     protected $guarded = [
-
+    'id',
     'conf',
     'name',
     'num',

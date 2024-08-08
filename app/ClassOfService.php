@@ -8,13 +8,12 @@ class ClassOfService extends Model
 {
     //
     protected $table = 'cos';
-    protected $primaryKey = 'pkey';
+    protected $primaryKey = 'id';
     protected $keyType = 'string';
     public $incrementing = false;
     public $timestamps = false;
 
     protected $attributes = [
-
         'active' => 'NO',
         'defaultclosed' => 'NO',
         'defaultopen' => 'NO',

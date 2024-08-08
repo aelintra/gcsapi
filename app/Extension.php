@@ -8,13 +8,14 @@ class Extension extends Model
 {
     
     protected $table = 'ipphone';
-    protected $primaryKey = 'pkey';
+    protected $primaryKey = 'id';
     protected $keyType = 'string';
     public $incrementing = false;
     public $timestamps = false;
 
     // column defaults
     protected $attributes = [
+		'pkey' => NULL,
     	'abstimeout' => '14400',  
     	'active' => 'YES',
     	'basemacaddr' => NULL,
@@ -23,26 +24,6 @@ class Extension extends Model
     	'cluster' => 'default',
     	'protocol' => 'IPV4',
     	'provisionwith' => 'IP',
-    	'sipiaxfriend' => 
-    	"type=peer
-defaultuser=\$desc
-secret=\$password
-mailbox=\$ext@\$clst
-host=dynamic
-qualify=yes
-context=internal
-call-limit=3
-callerid=\"\$desc\" <\$ext>
-canreinvite=no
-subscribecontext=\$subtxt
-namedcallgroup=\$clst
-namedpickupgroup=\$clst
-disallow=all 
-allow=alaw
-allow=ulaw
-nat=\$nat
-transport=\$transport
-encryption=\$encryption",
     	'sndcreds' => 'Always',
     	'transport' => 'udp',
         'technology' => 'SIP',
@@ -55,14 +36,11 @@ encryption=\$encryption",
     		'abstimeout',
     		'basemacaddr',
     		'devicemodel',
-    		'dialstring',
     		'firstseen',
     		'lastseen',
 			'passwd',
     		'z_created',
     		'z_updated',
-    		'newformat',
-    		'openfirewall',
     		'stealtime',
     		'stolen',
     		'tls',
@@ -72,12 +50,6 @@ encryption=\$encryption",
     // hidden columns (mostly no longer used)
     protected $hidden = [
     		'abstimeout',
-    		'channel',
-    		'dialstring',
-    		'externalip',
-    		'newformat',
-    		'openfirewall',
-			'sipiaxfriend',
     		'tls',
     		'twin'
     ];
