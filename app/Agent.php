@@ -8,13 +8,13 @@ class Agent extends Model
 {
     //
     protected $table = 'agent';
-    protected $primaryKey = 'pkey';
+    protected $primaryKey = 'id';
     protected $keyType = 'string';
     public $incrementing = false;
     public $timestamps = false;
 
     protected $attributes = [
-    'id',
+    'id'=> null,
     'conf' => null,
     'cluster' => 'default',
     'name' => null,
